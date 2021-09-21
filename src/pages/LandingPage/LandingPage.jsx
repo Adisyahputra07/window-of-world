@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import icon from "../../assets/Icon.png";
 import "./LandingPage.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 //components
 import Buttons from "../../components/Button/Buttons";
+import ModalSignUp from "../../components/ModalSignUp/ModalSignUp";
 
 export default function LandingPage() {
+  const [modalShow, setModalShow] = useState(false);
+
   return (
     <div className="landing-page-container">
       <main>
@@ -18,12 +21,13 @@ export default function LandingPage() {
               rental service provider in Indonesia
             </p>
             <div className="button-container">
-              <Buttons btnName="Sign Up" color="sign-up" />
+              <Buttons clicked={() => setModalShow(true)} btnName="Sign Up" color="sign-up" />
               <Buttons btnName="Sign In" color="sign-in" />
             </div>
           </div>
         </div>
       </main>
+      <ModalSignUp show={modalShow} hide={() => setModalShow(false)} />
     </div>
   );
 }
