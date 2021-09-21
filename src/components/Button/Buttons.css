@@ -1,0 +1,25 @@
+.sign-up {
+  color: #ffff;
+  background-color: #d60000;
+  font-size: 18px;
+}
+
+.sign-in {
+  color: #000;
+  background-color: #cdcdcd;
+  margin-left: 1.5em;
+  font-size: 18px;
+}
+.sign-in:hover {
+  background-color: #a7a3a3;
+  color: white;
+}
+
+.sign-up:hover {
+  background-color: #aa0d0d;
+  color: black;
+}
+
+.btn {
+  width: 160px;
+}
