@@ -6,9 +6,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 //components
 import Buttons from "../../components/Button/Buttons";
 import ModalSignUp from "../../components/ModalSignUp/ModalSignUp";
+import ModalSignIn from "../../components/ModalSignIn/ModalSignIn";
 
 export default function LandingPage() {
   const [modalShow, setModalShow] = useState(false);
+  const [modaSignInlShow, setModaSignInlShow] = useState(false);
 
   return (
     <div className="landing-page-container">
@@ -22,12 +24,13 @@ export default function LandingPage() {
             </p>
             <div className="button-container">
               <Buttons clicked={() => setModalShow(true)} btnName="Sign Up" color="sign-up" />
-              <Buttons btnName="Sign In" color="sign-in" />
+              <Buttons clicked={() => setModaSignInlShow(true)} btnName="Sign In" color="sign-in" />
             </div>
           </div>
         </div>
       </main>
       <ModalSignUp show={modalShow} hide={() => setModalShow(false)} />
+      <ModalSignIn show={modaSignInlShow} hide={() => setModaSignInlShow(false)} />
     </div>
   );
 }

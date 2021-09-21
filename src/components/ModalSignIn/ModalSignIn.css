@@ -1,12 +1,12 @@
 .modal-content {
   border-radius: 10px !important;
   padding: 35px;
-  width: 416px;
-  height: 479px;
+  width: 416px !important;
 }
 
 .form-header h1 {
   font-weight: bold;
+  margin-bottom: 30px;
 }
 
 .form-control-lg {
@@ -18,19 +18,19 @@
   width: 100%;
 }
 
-.btn-signUp {
+.btn-signIn {
   background-color: #d60000 !important;
   color: white;
   font-weight: bold;
   height: 50px;
 }
 
-.btn-signUp:hover {
+.btn-signIn:hover {
   background-color: #aa0d0d !important;
   color: black;
 }
 
-.btn-signUp:active {
+.btn-signIn:active {
   background-color: #aa0d0d !important;
   color: black;
 }
