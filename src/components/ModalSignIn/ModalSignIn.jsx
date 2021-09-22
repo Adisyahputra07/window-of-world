@@ -24,7 +24,7 @@ export default function ModalSignIn(props) {
               <Form>
                 <Form.Control size="lg" type="text" placeholder="Email" />
                 <br />
-                <Form.Control size="lg" type="text" placeholder="Password" />
+                <Form.Control size="lg" type="password" placeholder="Password" />
                 <br />
                 <Button className="btn-signIn mt-1 mb-4">Sign In</Button>
                 <div className="text">

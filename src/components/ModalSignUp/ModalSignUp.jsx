@@ -23,7 +23,7 @@ export default function ModalSignIn(props) {
             <Form>
               <Form.Control size="lg" type="text" placeholder="Email" />
               <br />
-              <Form.Control size="lg" type="text" placeholder="Password" />
+              <Form.Control size="lg" type="password" placeholder="Password" />
               <br />
               <Form.Control size="lg" type="text" placeholder="Full Name" />
               <br />
