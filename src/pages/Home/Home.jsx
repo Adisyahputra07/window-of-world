@@ -1,15 +1,12 @@
 import React from "react";
 import HomeCss from "./Home.module.css";
 import jumbotron1 from "../../assets/jumbotron1.png";
-import card1 from "../../assets/card1.svg";
-import CardBook from "../../components/Card/Card";
-
-// import data
-import bookData from "../../fakeData/bookdate.js";
 
 // Component
-
 import SideBar from "../../components/SideBar/SideBar";
+import CardBook from "../../components/Card/Card";
+
+// fakedata
 import data from "../../fakeData/bookdate.js";
 
 export default function Home() {
@@ -34,7 +31,7 @@ export default function Home() {
                 <div className="row">
                   {data.map((item) => (
                     <div class="col-3 mt-2 mb-5">
-                      <CardBook card={card1} data={item} />
+                      <CardBook data={item} />
                     </div>
                   ))}
                 </div>
