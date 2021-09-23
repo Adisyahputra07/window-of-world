@@ -2,11 +2,17 @@ import React from "react";
 import "./ModalSignIn.css";
 
 // components
+import { useHistory } from "react-router";
 
 import { Modal, Form, Button } from "react-bootstrap";
 
 export default function ModalSignIn(props) {
   const { show, hide } = props;
+  let history = useHistory();
+
+  const handlePushSignIn = () => {
+    history.push("/home");
+  };
 
   return (
     <div>
@@ -26,10 +32,12 @@ export default function ModalSignIn(props) {
                 <br />
                 <Form.Control size="lg" type="password" placeholder="Password" />
                 <br />
-                <Button className="btn-signIn mt-1 mb-4">Sign In</Button>
+                <Button onClick={handlePushSignIn} className="btn-signIn mt-1 mb-4">
+                  Sign In
+                </Button>
                 <div className="text">
                   <p>
-                    Don't have an account ? Klik <a href={""}>Here</a>
+                    Don't have an account ? Klik <a href="#">Here</a>
                   </p>
                 </div>
               </Form>

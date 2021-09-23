@@ -1,0 +1,22 @@
+.homeContainer {
+  display: flex;
+  margin-left: 36px;
+  margin-right: 36px;
+}
+
+.sideJombotron {
+  margin-top: 46px;
+  flex: 3;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-left: 30px;
+}
+
+/* card */
+
+.titleCard {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-weight: bold;
+  font-size: 30px;
+}
