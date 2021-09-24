@@ -8,7 +8,7 @@ const PopUp = ({ show, hide, message }) => {
 
   return (
     <div>
-      <Modal show={show} onHide={hide} centered>
+      <Modal show={show} onHide={hide}>
         <p>{message}</p>
       </Modal>
     </div>

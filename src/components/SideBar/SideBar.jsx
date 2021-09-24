@@ -28,6 +28,7 @@ export default function SideBar() {
           <div className={HomeCss.navLinkSideBar}>
             <img src={user1} alt="user1" />
             <a href="#">Profile</a>
+            {/* todo angcor */}
           </div>
           <div className={HomeCss.navLinkSideBar}>
             <img src={bill1} alt="bill1" />

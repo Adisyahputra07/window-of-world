@@ -1,0 +1,60 @@
+const dataTransaction = [
+  {
+    id: 1,
+    name: "Radif Ganteng",
+    buktiTransfer: "bca.jpg",
+    remainingActive: 30,
+    statusUser: "Active",
+    statusPayment: "Approve",
+  },
+  {
+    id: 2,
+    name: "Haris Rahman ",
+    buktiTransfer: "bni.jpg",
+    remainingActive: 5,
+    statusUser: "Active",
+    statusPayment: "Approve",
+  },
+  {
+    id: 3,
+    name: "Amin",
+    buktiTransfer: "permata.jpg",
+    remainingActive: 4,
+    statusUser: "Not Active",
+    statusPayment: "Cancel",
+  },
+  {
+    id: 4,
+    name: "Haris",
+    buktiTransfer: "bi.jpg",
+    remainingActive: 90,
+    statusUser: "Not Active",
+    statusPayment: "Panding",
+  },
+  {
+    id: 5,
+    name: "Aziz",
+    buktiTransfer: "bni.jpg",
+    remainingActive: 20,
+    statusUser: "Panding",
+    statusPayment: "Not Active",
+  },
+  {
+    id: 6,
+    name: "Sugeng",
+    buktiTransfer: "bi.jpg",
+    remainingActive: 20,
+    statusUser: "Not Active",
+    statusPayment: "Panding",
+  },
+  {
+    id: 7,
+    name: "Ozi",
+    buktiTransfer: "bi.jpg",
+    remainingActive: 50,
+    statusUser: "Active",
+    statusPayment: "Approve",
+  },
+];
+
+export default dataTransaction;
