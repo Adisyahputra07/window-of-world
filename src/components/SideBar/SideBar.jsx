@@ -1,4 +1,6 @@
 import React from "react";
+import { useHistory } from "react-router";
+
 import user from "../../assets/user1.svg";
 import iconJumbotron from "../../assets/Icon-jumbotron.png";
 import user1 from "../../assets/user1.png";
@@ -7,6 +9,11 @@ import logout1 from "../../assets/logout1.png";
 import HomeCss from "./SideBar.module.css";
 
 export default function SideBar() {
+  let history = useHistory();
+
+  const handleSubscribe = () => {
+    history.push("/subscribe");
+  };
   return (
     <div>
       <div className={HomeCss.sideBar}>
@@ -20,25 +27,25 @@ export default function SideBar() {
           <div className={HomeCss.titleSideBar}>
             <h1>Egi Ganteng</h1>
             <span>
-              <a href="#">Not Subscribed Yet </a>
+              <a>Not Subscribed Yet </a>
             </span>
           </div>
         </div>
         <div className={HomeCss.navGroupSideBar}>
           <div className={HomeCss.navLinkSideBar}>
             <img src={user1} alt="user1" />
-            <a href="#">Profile</a>
+            <a>Profile</a>
             {/* todo angcor */}
           </div>
           <div className={HomeCss.navLinkSideBar}>
             <img src={bill1} alt="bill1" />
-            <a href="#">Subscribe</a>
+            <a onClick={handleSubscribe}>Subscribe</a>
           </div>
         </div>
         <div className={HomeCss.navLogoutSideBar}>
           <div className={HomeCss.navLinkSideBar}>
             <img src={logout1} alt="logout1" />
-            <a href="#">Logout</a>
+            <a>Logout</a>
           </div>
         </div>
       </div>

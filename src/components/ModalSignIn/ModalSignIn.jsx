@@ -19,11 +19,11 @@ export default function ModalSignIn(props) {
       <Modal
         show={show}
         onHide={hide}
-        size="md"
         aria-labelledby="contained-modal-title-vcenter"
         centered
+        dialogClassName="modalSignIn"
       >
-        <div className="form-container">
+        <Modal.Body className="formContainer ">
           <div className="form-header">
             <h1>Sign In</h1>
             <div className="form-body">
@@ -43,7 +43,7 @@ export default function ModalSignIn(props) {
               </Form>
             </div>
           </div>
-        </div>
+        </Modal.Body>
       </Modal>
     </div>
   );

@@ -17,7 +17,13 @@ export default function CardBook(props) {
             <Card.Text style={{ color: "#929292", fontSize: "18px" }}>{data.writer}</Card.Text>
           </Card.Body>
         </Card>
-        <ModalAlert show={modalShow} hide={() => setModalShow(false)} />
+        <ModalAlert
+          show={modalShow}
+          hide={() => setModalShow(false)}
+          message="please make a payment to read the latest books"
+          color="
+          #D60000"
+        />
       </div>
     </div>
   );

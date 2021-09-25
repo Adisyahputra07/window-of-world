@@ -6,6 +6,7 @@ import Home from "./pages/Home/Home";
 import PageSubscribe from "./pages/PageSubscribe/PageSubscribe";
 import Profile from "./pages/Profile/Profile";
 import IncomeTransaction from "./pages/IncomeTransaction/IncomeTransaction";
+import AddBook from "./pages/AddBook/AddBook";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route exact path="/subscribe" component={PageSubscribe} />
           <Route exact path="/profile" component={Profile} />
           <Route exact path="/income-transaction" component={IncomeTransaction} />
+          <Route exact path="/addBook" component={AddBook} />
         </Switch>
       </Router>
     </div>

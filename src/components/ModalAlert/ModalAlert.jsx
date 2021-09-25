@@ -1,19 +1,19 @@
 import React from "react";
 import { Modal } from "react-bootstrap";
 
+import styleCss from "./ModalAlert.module.css";
+
 export default function PopUpAlert(props) {
-  const { show, hide } = props;
+  const { show, hide, message, color } = props;
 
   return (
     <div>
-      <Modal
-        show={show}
-        onHide={hide}
-        size="md"
-        aria-labelledby="contained-modal-title-vcenter"
-        centered
-      >
-        <p>spanlease make a payment to read the latest books</p>
+      <Modal show={show} onHide={hide} centered>
+        <div style={{ paddingLeft: "30px", paddingRight: "30px" }}>
+          <p style={{ marginTop: "1em", textAlign: "center", fontSize: "20px", color: `${color}` }}>
+            {message}
+          </p>
+        </div>
       </Modal>
     </div>
   );

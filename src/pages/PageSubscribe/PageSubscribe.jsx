@@ -7,9 +7,9 @@ import UploadIcon from "../../assets/UploadIcon.svg";
 import wow from "../../assets/wow.png";
 
 //Components
-import PopUp from "../../components/ModalPopUp/ModalPopUp";
 import SideBar from "../../components/SideBar/SideBar";
 import { Button, Form } from "react-bootstrap";
+import ModalAlert from "../../components/ModalAlert/ModalAlert";
 
 export default function PageSubscribe() {
   const [modalShow, setModalShow] = useState(false);
@@ -32,7 +32,7 @@ export default function PageSubscribe() {
             <Form>
               <Form.Group className="mb-4" controlId="ControlInput3">
                 <Form.Control
-                  required
+                  // required
                   type="number"
                   placeholder="Input your account number"
                   name="price"
@@ -66,12 +66,12 @@ export default function PageSubscribe() {
           </div>
         </div>
       </div>
-      <PopUp
+      <ModalAlert
         show={modalShow}
         hide={() => setModalShow(false)}
-        message="Thank you for subscribing to premium, your pr
-        emium package will be active after our admin approves your transaction, thank you"
-        success={true}
+        message="Thank you for subscribing to premium, your premium package will be active after our admin approves your transaction, thank you"
+        color="
+        #29BD11"
       />
     </div>
   );
