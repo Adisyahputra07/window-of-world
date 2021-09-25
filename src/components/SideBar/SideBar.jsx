@@ -19,33 +19,34 @@ export default function SideBar() {
       <div className={HomeCss.sideBar}>
         <div className={HomeCss.sideBar1}>
           <div className={HomeCss.iconSideBar}>
-            <img src={iconJumbotron} alt="icon-jumbotron" />
-            <br />
-            <img src={user} alt="user" className={HomeCss.avatar} />
+            <div onClick={() => history.push("/home")} className="logoIcon">
+              <img src={iconJumbotron} alt="icon-jumbotron" />
+            </div>
+            <div onClick={() => history.push("/profile")} className="iconAvatar">
+              <img src={user} alt="user" className={HomeCss.avatar} />
+            </div>
           </div>
           {/* Profile */}
           <div className={HomeCss.titleSideBar}>
             <h1>Egi Ganteng</h1>
-            <span>
-              <a>Not Subscribed Yet </a>
-            </span>
+            <span className="text-danger fw-bold fs-6">Not Subscribed Yet</span>
           </div>
         </div>
         <div className={HomeCss.navGroupSideBar}>
-          <div className={HomeCss.navLinkSideBar}>
+          {/* todo Onclick */}
+          <div onClick={() => history.push("/profile")} className={HomeCss.navLinkSideBar}>
             <img src={user1} alt="user1" />
-            <a>Profile</a>
-            {/* todo angcor */}
+            <span>Profile</span>
           </div>
-          <div className={HomeCss.navLinkSideBar}>
+          <div onClick={() => history.push("/subscribe")} className={HomeCss.navLinkSideBar}>
             <img src={bill1} alt="bill1" />
-            <a onClick={handleSubscribe}>Subscribe</a>
+            <span>Subscribe</span>
           </div>
         </div>
         <div className={HomeCss.navLogoutSideBar}>
-          <div className={HomeCss.navLinkSideBar}>
+          <div onClick={() => history.push("/")} className={HomeCss.navLinkSideBar}>
             <img src={logout1} alt="logout1" />
-            <a>Logout</a>
+            <span>Logout</span>
           </div>
         </div>
       </div>

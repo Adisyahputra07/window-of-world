@@ -6,14 +6,11 @@
 
 .sideJombotron {
   margin-top: 46px;
-  flex: 3;
-  padding: 10px;
   box-sizing: border-box;
-  margin-left: 30px;
+  background-color: black;
 }
 
 /* card */
-
 .titleCard {
   margin-top: 30px;
   margin-bottom: 30px;

@@ -16,13 +16,11 @@ export default function Home() {
         <SideBar />
         {/* Jombotron */}
         <div className={HomeCss.sideJombotron}>
-          <div className={HomeCss.jumbotron}>
-            <img src={jumbotron1} alt="jumbotron1" />
-          </div>
+          <img src={jumbotron1} alt="jumbotron1" width="100%" />
           {/* Card */}
           <div className={HomeCss.listCard}>
             <section>
-              <div className="container">
+              <div className="ms-4">
                 <div className="row mt-1">
                   <div className="col">
                     <h3 className={HomeCss.titleCard}>List Book</h3>

@@ -1,7 +1,8 @@
 .sideBar {
-  flex: 0.7;
-  margin-top: 24px;
-  margin-right: 37px;
+  width: 16em;
+  margin-top: 30px;
+  padding: 0 1em;
+  background-color: darkblue;
 }
 
 .sideBar1 {
@@ -28,32 +29,26 @@
   font-size: 25px;
 }
 
-.titleSideBar span a {
-  color: #d60000;
-  font-weight: bold;
-  font-size: 17px;
-  text-decoration: none;
-}
-
 .navGroupSideBar {
   margin-top: 38px;
   border-bottom: 1px solid rgb(206, 206, 206);
 }
 
-.navGroupSideBar a,
-.navLogoutSideBar a {
-  color: #929292;
-  margin-left: 20px;
-  font-size: 22px;
-  text-decoration: none;
-}
 .navLinkSideBar {
   margin-top: 50px;
   margin-bottom: 50px;
+  display: flex;
+  /* justify-content: center; */
+  margin-left: 15px;
+}
+
+.navLinkSideBar span {
+  margin-left: 12px;
+  color: #929292;
+  font-weight: bold;
 }
 
 .navLinkSideBar img {
-  /* margin-left: 40px; */
   margin-bottom: 10px;
 }
 

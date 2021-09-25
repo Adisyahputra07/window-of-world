@@ -1,10 +1,12 @@
 import React from "react";
 import HomeCss from "./Profile.module.css";
+
+// icon image
 import profile from "../../assets/profile.png";
-import mail from "../../assets/mail.png";
-import map from "../../assets/map.png";
-import phone from "../../assets/phone.png";
-import gender1 from "../../assets/gender1.png";
+import mail from "../../assets/mail.svg";
+import map from "../../assets/maps.svg";
+import phone from "../../assets/phone.svg";
+import gender1 from "../../assets/gender.svg";
 
 // component
 import SideBar from "../../components/SideBar/SideBar";
@@ -54,9 +56,14 @@ export default function Profile() {
               </div>
 
               {/* avataruser */}
-              <div className={HomeCss.avatarUser}>
-                <img src={profile} alt="" />
-                <button className={HomeCss.btn}>Edit Profile</button>
+
+              <div>
+                <div className={HomeCss.avatarUser}>
+                  <div>
+                    <img src={profile} alt="" />
+                  </div>
+                  <button className={HomeCss.btn}>Edit Profile</button>
+                </div>
               </div>
             </div>
             {/* Card */}
