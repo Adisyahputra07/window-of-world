@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import HomeCss from "./Home.module.css";
 import jumbotron1 from "../../assets/jumbotron1.png";
 

@@ -8,9 +8,14 @@ import Profile from "./pages/Profile/Profile";
 import IncomeTransaction from "./pages/IncomeTransaction/IncomeTransaction";
 import AddBook from "./pages/AddBook/AddBook";
 import DetailReadbook from "./pages/DetailReadbook/DetailReadbook";
-import Test from "./components/SideBar/test";
+import ReadBook from "./pages/read-books/ReadBook";
+
+// FakeData
+import dataUser from "../src/fakeData/dataUser.json";
 
 function App() {
+  // set local storage
+  localStorage.setItem("dataUser", JSON.stringify(dataUser));
   return (
     <div>
       <Router>
@@ -20,9 +25,9 @@ function App() {
           <Route exact path="/subscribe" component={PageSubscribe} />
           <Route exact path="/profile" component={Profile} />
           <Route exact path="/income-transaction" component={IncomeTransaction} />
-          <Route exact path="/addBook" component={AddBook} />
-          <Route exact path="/DetailReadbook" component={DetailReadbook} />
-          <Route exact path="/sidebar" component={Test} />
+          <Route exact path="/add-book" component={AddBook} />
+          <Route exact path="/detail-readbook/:id" component={DetailReadbook} />
+          <Route exact path="/readbook" component={ReadBook} />
         </Switch>
       </Router>
     </div>

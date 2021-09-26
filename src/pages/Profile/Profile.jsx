@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import HomeCss from "./Profile.module.css";
 
 // icon image
@@ -12,9 +12,14 @@ import gender1 from "../../assets/gender.svg";
 import SideBar from "../../components/SideBar/SideBar";
 import CardBook from "../../components/Card/Card";
 
+// data
 import data from "../../fakeData/bookdate.js";
+import { UserContext } from "../../context/userContext";
 
 export default function Profile() {
+  const [state, dispatch] = useContext(UserContext);
+  console.log(state);
+
   return (
     <div>
       <div>
@@ -28,7 +33,7 @@ export default function Profile() {
                 <div className={HomeCss.listContact}>
                   <img src={mail} alt="mail" />
                   <div className={HomeCss.iconList}>
-                    <p>egigans@gmail.com</p>
+                    <p>{state.user.email}</p>
                     <span>mail</span>
                   </div>
                 </div>

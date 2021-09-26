@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "status": "admin",
+    "email": "admin@gmail.com",
+    "password": "admin",
+    "fullName": "admin syahputra",
+    "isSubscribe": false
+  },
+  {
+    "id": 2,
+    "status": "user",
+    "password": "user",
+    "email": "user@gmail.com",
+    "fullName": "user bin mail",
+    "isSubscribe": false
+  }
+]

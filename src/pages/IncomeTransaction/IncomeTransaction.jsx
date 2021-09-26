@@ -1,12 +1,16 @@
 import React from "react";
+import incomeCss from "./IncomeTransaction.module.css";
 import NavbarPages from "../../components/NavbarPages/NavbarPages";
-import { Table } from "react-bootstrap";
+import { Table, Dropdown } from "react-bootstrap";
+
+// icon
+import iconAction from "../../assets/iconAction.svg";
 
 export default function IncomeTransaction() {
   return (
     <div>
       <NavbarPages />
-      <Table striped bordered hover>
+      <Table striped hover className="table-light">
         <thead>
           <tr>
             <th>No</th>
@@ -26,7 +30,27 @@ export default function IncomeTransaction() {
             <td>@mdo</td>
             <td>@mdo</td>
             <th>Action</th>
-            <th>Action</th>
+            <th>
+              <Dropdown>
+                <Dropdown.Toggle
+                  id="dropdown-button-dark-example1"
+                  variant="secondary"
+                  style={{
+                    width: "20px",
+                    backgroundColor: "transparent",
+                    border: "none",
+                    color: "#1C9CD2",
+                  }}
+                >
+                  <img src={iconAction} alt="" />
+                </Dropdown.Toggle>
+
+                <Dropdown.Menu className={incomeCss.dropdownAction} variant="light">
+                  <Dropdown.Item className="text-success fw-bold"> Approved</Dropdown.Item>
+                  <Dropdown.Item className="text-danger fw-bold">Cancel</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+            </th>
           </tr>
           <tr>
             <td>2</td>

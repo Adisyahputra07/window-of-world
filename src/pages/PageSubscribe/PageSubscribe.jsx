@@ -1,6 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./PageSubscribe.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+
+// useContext
+import { UserContext } from "../../context/userContext";
 
 // icon
 import UploadIcon from "../../assets/UploadIcon.svg";
@@ -12,6 +15,8 @@ import { Button, Form } from "react-bootstrap";
 import ModalAlert from "../../components/ModalAlert/ModalAlert";
 
 export default function PageSubscribe() {
+  const [state, dispatch] = useContext(UserContext);
+
   const [modalShow, setModalShow] = useState(false);
 
   return (
@@ -54,7 +59,12 @@ export default function PageSubscribe() {
               {/* button */}
               <center>
                 <Button
-                  onClick={() => setModalShow(true)}
+                  onClick={() => {
+                    dispatch({
+                      type: "SUBSCRIBE",
+                    });
+                    setModalShow(true);
+                  }}
                   className="button-dominant mt-3"
                   type="submit"
                   style={{ backgroundColor: "#D60000", border: "1px solid #D60000" }}

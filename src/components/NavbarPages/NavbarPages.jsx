@@ -2,34 +2,67 @@ import React from "react";
 import { Navbar, Container, Nav, Dropdown } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavbarCss from "./NavbarPages.module.css";
+import { useHistory } from "react-router";
+
+// useContext
 
 import icon from "../../assets/icon.png";
 import user2 from "../../assets/user2.png";
+import iconAddbook from "../../assets/group1.svg";
+import iconLogout from "../../assets/logout1.svg";
 
 export default function NavbarPages() {
+  const history = useHistory();
+
   return (
     <div>
       <>
-        <Navbar bg="light" variant="light" style={{ height: "150px" }}>
+        <Navbar style={{ height: "150px" }}>
           <Container fluid style={{ padding: "30px" }}>
-            <Navbar.Brand href="#home">
+            <Navbar.Brand onClick={() => history.push("/home")}>
               <img src={icon} alt="icon" />
             </Navbar.Brand>
             <Nav className="ms-auto">
               <>
-                <Dropdown as={Nav.Item} className="ml-3">
+                <Dropdown as={Nav.Item} className="ml-3 d">
                   <Dropdown.Toggle as={Nav.Link}>
                     <img className="" src={user2} alt="user pic" width="50px" />
                   </Dropdown.Toggle>
                   <Dropdown.Menu
                     align="right"
                     style={{
-                      left: "-5em",
+                      left: "-8em",
+                      marginTop: "10px",
+                      width: "200px",
                     }}
                     className={NavbarCss.dropdownMenu}
                   >
-                    <Dropdown.Item>Profile</Dropdown.Item>
-                    <Dropdown.Item>Logout</Dropdown.Item>
+                    <Dropdown.Item
+                      onClick={() => history.push("/add-book")}
+                      className="d-flex fs-6 fw-bold"
+                    >
+                      <img
+                        src={iconAddbook}
+                        alt=""
+                        className="me-2 mb-2"
+                        style={{
+                          width: "25px",
+                        }}
+                      />
+                      <p>Add Book</p>
+                    </Dropdown.Item>
+                    <Dropdown.Divider />
+                    <Dropdown.Item className="d-flex fs-6 fw-bold">
+                      <img
+                        src={iconLogout}
+                        alt=""
+                        className="me-2 mb-2"
+                        style={{
+                          width: "25px",
+                        }}
+                      />
+                      <p>Logout</p>
+                    </Dropdown.Item>
                   </Dropdown.Menu>
                 </Dropdown>
               </>

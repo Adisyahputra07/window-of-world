@@ -1,13 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import SideBar from "../../components/SideBar/SideBar";
 import DetailReadbookCss from "./DetailReadbook.module.css";
 //icon
-import card1 from "../../assets/card1.svg";
 import iconBtnDetail1 from "../../assets/iconBtnDetail1.svg";
 import iconBtnDetail2 from "../../assets/iconBtnDetail2.svg";
 import imgJumbo from "../../assets/imgJumbo.svg";
+import { useHistory, useParams } from "react-router-dom";
+
+//import dataFake
+import bookdata from "../../fakeData/bookdate";
 
 export default function DetailReadbook() {
+  const { id } = useParams();
+
+  // show btn
+  const [showbtn, setShowBtn] = useState(false);
+  const history = useHistory();
+
+  const book = bookdata.filter((itemBook) => +id == itemBook.id);
+
   return (
     <div
       className={DetailReadbookCss.sideDetailBook}
@@ -24,12 +35,12 @@ export default function DetailReadbook() {
       >
         <div className={DetailReadbookCss.descBook}>
           <div className={DetailReadbookCss.imgBook}>
-            <img src={imgJumbo} alt="alt" />
+            <img src={book[0].image} alt="alt" />
           </div>
           <div className={DetailReadbookCss.listDescBook}>
             <div className={DetailReadbookCss.listDesc}>
-              <h1 className={DetailReadbookCss.title}>Tess On The Road</h1>
-              <span>Rachel Hartman</span>
+              <h1 className={DetailReadbookCss.title}>{book[0].name}</h1>
+              <span>{book[0].writer}</span>
             </div>
             <div className={DetailReadbookCss.listDesc}>
               <p>Publication date</p>
@@ -73,8 +84,10 @@ export default function DetailReadbook() {
 
         <div className={DetailReadbookCss.btns}>
           <div
+            onClick={() => setShowBtn(true)}
             className="btn p-2 d-flex justify-content-evenly"
             style={{
+              visibility: showbtn ? "hidden" : "visible",
               border: "2px solid #d60000",
               backgroundColor: "#d60000",
               color: "white",
@@ -89,6 +102,7 @@ export default function DetailReadbook() {
             <img src={iconBtnDetail2} alt="add" width="15px" />
           </div>
           <div
+            onClick={() => history.push("/readbook")}
             className="btn p-2 d-flex justify-content-evenly"
             style={{
               border: "2px solid #CDCDCD",

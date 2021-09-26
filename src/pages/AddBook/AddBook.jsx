@@ -38,7 +38,7 @@ export default function AddBook() {
                 placeholder="About This Book"
                 as="textarea"
                 rows={5}
-                style={{ backgroundColor: "#e5e5e5", border: "2px solid #c7c7c7" }}
+                style={{ border: "2px solid #c7c7c7", backgroundColor: "#e5e5e5" }}
               />
             </Form.Group>
             <div className="d-flex justify-content-between">

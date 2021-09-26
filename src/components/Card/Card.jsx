@@ -1,15 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Card } from "react-bootstrap";
+import { useHistory } from "react-router-dom";
 import ModalAlert from "../../components/ModalAlert/ModalAlert";
+import { UserContext } from "../../context/userContext";
 
 export default function CardBook(props) {
   const [modalShow, setModalShow] = useState(false);
+  const [state, dispatch] = useContext(UserContext);
 
+  const history = useHistory();
   const { data } = props;
+  console.log(data);
+
+  const handleToDetail = () => {
+    if (state.isLogin === true) {
+      console.log("istrue login");
+      history.push(`/detail-readbook/${data.id}`);
+    } else {
+      setModalShow(true);
+    }
+  };
 
   return (
     <div>
-      <div onClick={() => setModalShow(true)}>
+      <div onClick={handleToDetail}>
         <Card style={{ width: "13em", border: "none", borderRadius: "12px", height: "25em" }}>
           <Card.Img variant="top" src={data.image} style={{ width: "100%" }} />
           <Card.Body>

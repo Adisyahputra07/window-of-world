@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useHistory } from "react-router";
 
 import user from "../../assets/user1.svg";
@@ -8,12 +8,26 @@ import bill1 from "../../assets/bill1.png";
 import logout1 from "../../assets/logout1.png";
 import HomeCss from "./SideBar.module.css";
 
+//
+import { UserContext } from "../../context/userContext";
+
 export default function SideBar() {
+  // context
+  const [state, dispatch] = useContext(UserContext);
+
   let history = useHistory();
 
   const handleSubscribe = () => {
     history.push("/subscribe");
   };
+
+  const handleLogout = () => {
+    dispatch({
+      type: "LOGOUT",
+    });
+    history.push("/");
+  };
+
   return (
     <div>
       <div className={HomeCss.sideBar}>
@@ -28,8 +42,12 @@ export default function SideBar() {
           </div>
           {/* Profile */}
           <div className={HomeCss.titleSideBar}>
-            <h1>Egi Ganteng</h1>
-            <span className="text-danger fw-bold fs-6">Not Subscribed Yet</span>
+            <h1>{state.user.fullName}</h1>
+            {state.user.isSubscribe ? (
+              <span className="text-success fw-bold fs-6">Subscribed</span>
+            ) : (
+              <span className="text-danger fw-bold fs-6">Not Subscribed Yet</span>
+            )}
           </div>
         </div>
         <div className={HomeCss.navGroupSideBar}>
@@ -44,7 +62,7 @@ export default function SideBar() {
           </div>
         </div>
         <div className={HomeCss.navLogoutSideBar}>
-          <div onClick={() => history.push("/")} className={HomeCss.navLinkSideBar}>
+          <div onClick={handleLogout} className={HomeCss.navLinkSideBar}>
             <img src={logout1} alt="logout1" />
             <span>Logout</span>
           </div>

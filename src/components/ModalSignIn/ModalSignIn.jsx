@@ -1,17 +1,52 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import "./ModalSignIn.css";
+
+// usecontext
+import { UserContext } from "../../context/userContext";
 
 // components
 import { useHistory } from "react-router";
-
 import { Modal, Form, Button } from "react-bootstrap";
 
 export default function ModalSignIn(props) {
   const { show, hide } = props;
   let history = useHistory();
 
-  const handlePushSignIn = () => {
-    history.push("/home");
+  const [state, dispatch] = useContext(UserContext);
+  // get local storage
+  const dataUser = JSON.parse(localStorage.getItem("dataUser"));
+
+  const [item, setItems] = useState({
+    email: "",
+    password: "",
+  });
+
+  const handleOnChanges = (e) => {
+    e.preventDefault();
+    setItems({
+      ...item,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleOnSignIn = (e) => {
+    e.preventDefault();
+    const userDB = dataUser.filter((data) => {
+      if (data.email === item.email && data.password === item.password) {
+        return data;
+      } else {
+        return null;
+      }
+    });
+
+    console.log(userDB);
+    if (userDB.length > 0) {
+      localStorage.setItem("dataLogin", JSON.stringify(userDB));
+      dispatch({ type: "LOGIN_SUCCESS", payload: userDB[0] });
+      history.push("/home");
+    } else {
+      alert("email or password is wrong");
+    }
   };
 
   return (
@@ -27,12 +62,24 @@ export default function ModalSignIn(props) {
           <div className="form-header">
             <h1>Sign In</h1>
             <div className="form-body">
-              <Form>
-                <Form.Control size="lg" type="text" placeholder="Email" />
+              <Form onSubmit={handleOnSignIn}>
+                <Form.Control
+                  size="lg"
+                  type="text"
+                  placeholder="Email"
+                  name="email"
+                  onChange={handleOnChanges}
+                />
                 <br />
-                <Form.Control size="lg" type="password" placeholder="Password" />
+                <Form.Control
+                  size="lg"
+                  type="password"
+                  placeholder="Password"
+                  name="password"
+                  onChange={handleOnChanges}
+                />
                 <br />
-                <Button onClick={handlePushSignIn} className="btn-signIn mt-1 mb-4">
+                <Button type="submit" className="btn-signIn mt-1 mb-4">
                   Sign In
                 </Button>
                 <div className="text">
