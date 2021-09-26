@@ -18,7 +18,6 @@ import { UserContext } from "../../context/userContext";
 
 export default function Profile() {
   const [state, dispatch] = useContext(UserContext);
-  console.log(state);
 
   return (
     <div>
@@ -61,7 +60,6 @@ export default function Profile() {
               </div>
 
               {/* avataruser */}
-
               <div>
                 <div className={HomeCss.avatarUser}>
                   <div>
@@ -71,6 +69,7 @@ export default function Profile() {
                 </div>
               </div>
             </div>
+
             {/* Card */}
             <div className={HomeCss.listCard}>
               <section>

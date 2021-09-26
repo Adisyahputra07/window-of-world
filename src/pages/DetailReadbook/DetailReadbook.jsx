@@ -17,6 +17,7 @@ export default function DetailReadbook() {
   const [showbtn, setShowBtn] = useState(false);
   const history = useHistory();
 
+  // filer data book
   const book = bookdata.filter((itemBook) => +id == itemBook.id);
 
   return (

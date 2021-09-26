@@ -1,8 +1,6 @@
 import React from "react";
 import { Modal } from "react-bootstrap";
 
-import styleCss from "./ModalAlert.module.css";
-
 export default function PopUpAlert(props) {
   const { show, hide, message, color } = props;
 

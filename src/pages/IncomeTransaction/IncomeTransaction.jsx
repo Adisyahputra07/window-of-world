@@ -29,10 +29,11 @@ export default function IncomeTransaction() {
             <td>Otto</td>
             <td>@mdo</td>
             <td>@mdo</td>
-            <th>Action</th>
+            <td>Action</td>
             <th>
               <Dropdown>
                 <Dropdown.Toggle
+                  className={incomeCss.ddToggle}
                   id="dropdown-button-dark-example1"
                   variant="secondary"
                   style={{
@@ -58,8 +59,8 @@ export default function IncomeTransaction() {
             <td>Thornton</td>
             <td>@fat</td>
             <td>@fat</td>
-            <th>Action</th>
-            <th>Action</th>
+            <td>Action</td>
+            <td>Action</td>
           </tr>
         </tbody>
       </Table>

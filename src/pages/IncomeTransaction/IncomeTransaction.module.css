@@ -13,3 +13,11 @@
   margin-right: -2.8em;
   font-weight: bold;
 }
+
+.ddToggle::after {
+  display: none;
+}
+
+th {
+  color: red;
+}

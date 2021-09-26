@@ -14,10 +14,12 @@ export default function CardBook(props) {
 
   const handleToDetail = () => {
     if (state.isLogin === true) {
-      console.log("istrue login");
-      history.push(`/detail-readbook/${data.id}`);
-    } else {
-      setModalShow(true);
+      if (state.user.isSubscribe) {
+        console.log("istrue login");
+        history.push(`/detail-readbook/${data.id}`);
+      } else {
+        setModalShow(true);
+      }
     }
   };
 

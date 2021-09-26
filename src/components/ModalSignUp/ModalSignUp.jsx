@@ -6,11 +6,12 @@ import "./ModalSignUp.css";
 import { Modal, Form, Button } from "react-bootstrap";
 
 export default function ModalSignIn(props) {
+  const { show, hide } = props;
   // useHistory render
   const history = useHistory();
 
   const dataUser = JSON.parse(localStorage.getItem("dataUser"));
-
+  // state value Input
   const [valueInput, setValueInput] = useState({
     id: Math.floor(Math.random() * 100 + 1),
     email: "",
@@ -18,10 +19,6 @@ export default function ModalSignIn(props) {
     fullName: "",
     isSubscribe: false,
   });
-
-  console.log(valueInput);
-
-  const { show, hide } = props;
 
   // create Handle Onchange
   const handleOnChanges = (e) => {
@@ -43,7 +40,7 @@ export default function ModalSignIn(props) {
       fullName: "",
       isSubscribe: false,
     });
-    // todo validasi notif icon sukses
+    // todo validasi notif icon success
   };
 
   return (

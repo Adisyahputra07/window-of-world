@@ -43,7 +43,7 @@ export default function ModalSignIn(props) {
     if (userDB.length > 0) {
       localStorage.setItem("dataLogin", JSON.stringify(userDB));
       dispatch({ type: "LOGIN_SUCCESS", payload: userDB[0] });
-      history.push("/home");
+      history.push(userDB[0].status === "admin" ? "/income-transaction" : "/home");
     } else {
       alert("email or password is wrong");
     }
